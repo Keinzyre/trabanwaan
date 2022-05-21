@@ -43,9 +43,9 @@ export default function LoginForm() {
     if (result.error) {
       setEmailError(true);
       /* setEmailHelperText("Invalid entry"); */
+      
       setPasswordError(true);
       setPasswordHelperText("Invalid email or password");
-      return;
     }
     setBackdropLoader(false);
     if (!result.error) {

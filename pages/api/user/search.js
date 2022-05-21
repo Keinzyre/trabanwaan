@@ -81,6 +81,12 @@ async function searchWorkerHandler(req, res) {
           index: "searchWorker",
           compound: {
             must: filters,
+            mustNot: [{
+              "text":{
+                query: "client",
+                path: "accountType"
+              }
+            }]
           },
         },
       },

@@ -92,15 +92,16 @@ function ExploreLayout(props) {
               >
                 <LocationOnOutlinedIcon />
                 <Typography variant="body2">
-                  Serves: {profile.area.join(", ")}
+                  Serves: {profile.area && profile.area.join(", ")}
                 </Typography>
               </Box>
               <Grid container spacing={1}>
-                {profile.service.map((serviceList) => (
-                  <Grid item key={serviceList}>
-                    <Chip label={serviceList} />
-                  </Grid>
-                ))}
+                {profile.service &&
+                  profile.service.map((serviceList) => (
+                    <Grid item key={serviceList}>
+                      <Chip label={serviceList} />
+                    </Grid>
+                  ))}
               </Grid>
             </Grid>
           </Grid>

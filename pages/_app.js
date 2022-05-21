@@ -99,7 +99,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }) {
               name="viewport"
               content="width=device-width, initial-scale=1"
             />
-            <meta name="keywords" content="Trabanwaan, Albay, crowdsourcing" />
+            
           </Head>
           <Layout layout={theme.palette.mode} onClickTheme={onClickTheme} />
           <Component {...pageProps} />

@@ -13,7 +13,7 @@ function Profile(props) {
     <Container maxWidth="md" sx={{ p: 2 }}>
       <Paper sx={{ p: "40px 20px" }}>
         <ProfileLayout workerProfile={props.workerProfile} />
-        {props.workerProfile.feedback.length &&
+        {props.workerProfile.feedback &&
           props.workerProfile.feedback.map((item, i) => (
             <FeedBackList key={i} {...item} />
           ))}

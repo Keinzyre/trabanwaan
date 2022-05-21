@@ -23,11 +23,11 @@ function Explore(props) {
   useEffect(() => {
     if (!searchResult.length) {
       setSearchEmpty(true);
-      console.log(searchResult, "ifcheck no result");
+      /* console.log(searchResult, "ifcheck no result"); */
     }
     if (searchResult.length) {
       setSearchEmpty(false);
-      console.log(searchResult, "ifcheck has result");
+      /* console.log(searchResult, "ifcheck has result"); */
     }
   }, [searchResult]);
 

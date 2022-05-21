@@ -16,8 +16,8 @@ export default NextAuth({
         const user = await usersCollection.findOne({
           email: credentials.email,
         });
-        console.log(user, "find one next auth");
-        console.log(user.profile.avatar, "user.profile.avatar");
+        /* console.log(user, "find one next auth");
+        console.log(user.profile.avatar, "user.profile.avatar"); */
         if (!user) {
           client.close();
           console.log("No user found next auth");

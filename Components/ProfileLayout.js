@@ -20,6 +20,7 @@ import DialogContent from "@mui/material/DialogContent";
 import { useState } from "react";
 import BookingLayout from "./BookingLayout";
 import DialogTitle from "@mui/material/DialogTitle";
+import { useSession } from "next-auth/react";
 
 const labels = {
   0: "N/A",
@@ -37,6 +38,7 @@ const labels = {
 
 export default function ProfileLayout(props) {
   const [open, setOpen] = useState(false);
+  const { data: session, status } = useSession();
 
   const {
     avatar,
@@ -198,12 +200,14 @@ export default function ProfileLayout(props) {
         </Grid>
       </Grid>
       <Grid container sx={{ pt: 1 }}>
-        <BookingLayout
-          workerFirstName={firstName}
-          workerLastName={lastName}
-          email={email}
-          phoneNumber={phoneNumber}
-        />
+        {session && session.user.accountType === "client" && (
+          <BookingLayout
+            workerFirstName={firstName}
+            workerLastName={lastName}
+            email={email}
+            phoneNumber={phoneNumber}
+          />
+        )}
       </Grid>
       <Divider variant="fullWidth" sx={{ margin: "30px 0" }} />
       <Grid container>
